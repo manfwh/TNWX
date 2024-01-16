@@ -4,6 +4,7 @@
  * @description 常用的工具方法
  */
 import { parseString, Builder } from 'xml2js'
+import {encode} from 'urlencode'
 import * as crypto from 'crypto'
 import * as uuid from 'uuid'
 
@@ -184,7 +185,12 @@ export class Kits {
   public static generateStr(): string {
     return uuid.v4().replace(/\-/g, '')
   }
-
+  /**
+   * 字符串编码 
+   */
+  public static encode(str: string, charset?: string) {
+    return encode(str, charset)
+  }
   /**
    * 生成签名
    * @param data

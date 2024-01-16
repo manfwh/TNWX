@@ -45,16 +45,16 @@
     "url": "http://gitee.com/javen205/TNWX/issues"
   },
   "dependencies": {
-    "@tnwx/accesstoken": "^2.5.5",
-    "@tnwx/cache": "^2.5.5",
-    "@tnwx/commons": "^2.5.5",
-    "@tnwx/kits": "^2.5.5",
-    "@tnwx/miniprogram": "^2.5.5",
-    "@tnwx/opencp": "^2.5.5",
-    "@tnwx/openmp": "^2.5.5",
-    "@tnwx/wxcp": "^2.5.5",
-    "@tnwx/wxmp": "^2.5.5",
-    "@tnwx/wxpay": "^2.5.5"
+    "@tnwx/accesstoken": "workspace:*",
+    "@tnwx/cache": "workspace:*",
+    "@tnwx/commons": "workspace:*",
+    "@tnwx/kits": "workspace:*",
+    "@tnwx/miniprogram": "workspace:*",
+    "@tnwx/opencp": "workspace:*",
+    "@tnwx/openmp": "workspace:*",
+    "@tnwx/wxcp": "workspace:*",
+    "@tnwx/wxmp": "workspace:*",
+    "@tnwx/wxpay": "workspace:*"
   },
   "gitHead": "0f631ba19491b13de9828ab1ba5f98eca08d550b"
 }

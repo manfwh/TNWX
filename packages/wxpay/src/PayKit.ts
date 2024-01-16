@@ -1,6 +1,5 @@
 import { RequestMethod } from './RequestMethod'
 import { Kits, HttpKit } from '@tnwx/kits'
-import * as urlencode from 'urlencode'
 import * as os from 'os'
 import * as util from 'util'
 
@@ -142,13 +141,13 @@ export class PayKit {
             .concat(key)
             .concat('=')
             .concat('"')
-            .concat(encode ? urlencode.encode(value) : value)
+            .concat(encode ? Kits.encode(value) : value)
             .concat('"')
         } else {
           content = content
             .concat(key)
             .concat('=')
-            .concat(encode ? urlencode.encode(value) : value)
+            .concat(encode ? Kits.encode(value) : value)
         }
       } else {
         if (quotes) {
@@ -156,14 +155,14 @@ export class PayKit {
             .concat(key)
             .concat('=')
             .concat('"')
-            .concat(encode ? urlencode.encode(value) : value)
+            .concat(encode ? Kits.encode(value) : value)
             .concat('"')
             .concat(connStr)
         } else {
           content = content
             .concat(key)
             .concat('=')
-            .concat(encode ? urlencode.encode(value) : value)
+            .concat(encode ? Kits.encode(value) : value)
             .concat(connStr)
         }
       }

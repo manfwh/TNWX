@@ -1,7 +1,6 @@
 import * as util from 'util'
-import * as urlencode from 'urlencode'
 import { AccessToken, AccessTokenApi, ApiConfigKit } from '@tnwx/accesstoken'
-import { HttpKit } from '@tnwx/kits'
+import { HttpKit, Kits } from '@tnwx/kits'
 import { SubscribeMsg } from '@tnwx/commons'
 
 /**
@@ -20,9 +19,9 @@ export class SubscribeMsgApi {
    * @param reserved 可以填写a-zA-Z0-9的参数值
    */
   public static getAuthorizeURL(scene: number, templateId: string, redirectUrl: string, reserved?: string): string {
-    let url = util.format(this.authorizeUrl, ApiConfigKit.getApiConfig.getAppId, scene, templateId, urlencode(redirectUrl))
+    let url = util.format(this.authorizeUrl, ApiConfigKit.getApiConfig.getAppId, scene, templateId, Kits.encode(redirectUrl))
     if (reserved) {
-      url = url + '&reserved=' + urlencode(reserved)
+      url = url + '&reserved=' + Kits.encode(reserved)
     }
     return url + '#wechat_redirect'
   }

@@ -1,7 +1,6 @@
 import * as util from 'util'
-import * as urlencode from 'urlencode'
 import { ApiConfigKit } from '@tnwx/accesstoken'
-import { HttpKit } from '@tnwx/kits'
+import { HttpKit, Kits } from '@tnwx/kits'
 import { ScopeEnum, Lang } from '@tnwx/commons'
 
 export class SnsAccessTokenApi {
@@ -18,7 +17,7 @@ export class SnsAccessTokenApi {
    *  @param state
    */
   public static getAuthorizeUrl(redirectUri: string, scope: ScopeEnum, state?: string): string {
-    let url = util.format(this.authorizeUrl, ApiConfigKit.getApiConfig.getAppId, urlencode(redirectUri), scope)
+    let url = util.format(this.authorizeUrl, ApiConfigKit.getApiConfig.getAppId, Kits.encode(redirectUri), scope)
     if (state) {
       url = url + '&state=' + state
     }

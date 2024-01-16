@@ -1,6 +1,5 @@
 import * as util from 'util'
-import * as urlencode from 'urlencode'
-import { HttpKit } from '@tnwx/kits'
+import { HttpKit, Kits } from '@tnwx/kits'
 import { AccessToken, QyAccessTokenApi } from '@tnwx/accesstoken'
 /**
  * @author Javen
@@ -18,10 +17,10 @@ export class QyOauthApi {
    * @param state 重定向后会带上state参数，企业可以填写a-zA-Z0-9的参数值，长度不可超过128个字节
    */
   public static getAuthorizeUrl(corpId: string, redirectUri: string, state?: string) {
-    return util.format(this.authorizeUrl, corpId, urlencode.encode(redirectUri), state)
+    return util.format(this.authorizeUrl, corpId, Kits.encode(redirectUri), state)
   }
   public static getQrConnect(corpId: string, agentId: string, redirectUri: string, state?: string) {
-    return util.format(this.qrConnectUrl, corpId, agentId, urlencode.encode(redirectUri), state)
+    return util.format(this.qrConnectUrl, corpId, agentId, Kits.encode(redirectUri), state)
   }
 
   private static getUserInfoUrl: string = 'https://qyapi.weixin.qq.com/cgi-bin/user/getuserinfo?access_token=%s&code=%s'

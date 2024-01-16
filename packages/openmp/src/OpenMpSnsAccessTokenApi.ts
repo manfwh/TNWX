@@ -1,8 +1,8 @@
 import * as util from 'util'
-import * as urlencode from 'urlencode'
 import { ApiConfigKit, AccessToken, OpenComponentAccessTokenApi } from '@tnwx/accesstoken'
-import { HttpKit } from '@tnwx/kits'
+import { HttpKit, Kits } from '@tnwx/kits'
 import { ScopeEnum, Lang } from '@tnwx/commons'
+
 /**
  * @author Javen
  * @copyright javendev@126.com
@@ -24,7 +24,7 @@ export class OpenMpSnsAccessTokenApi {
    * @param state       重定向后会带上 state 参数，开发者可以填写任意参数值，最多 128 字节
    */
   public static getAuthorizeUrl(appId: string, redirectUri: string, scope: ScopeEnum, state?: string): string {
-    let url = util.format(this.authorizeUrl, appId, urlencode(redirectUri), scope, ApiConfigKit.getApiConfig.getAppId)
+    let url = util.format(this.authorizeUrl, appId, Kits.encode(redirectUri), scope, ApiConfigKit.getApiConfig.getAppId)
     if (state) {
       url = url + '&state=' + state
     }

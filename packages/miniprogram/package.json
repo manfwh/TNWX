@@ -45,7 +45,9 @@
     "url": "http://gitee.com/javen205/TNWX/issues"
   },
   "dependencies": {
-    "@tnwx/accesstoken": "^2.5.5"
+    "@tnwx/accesstoken": "workspace:*",
+    "@tnwx/commons": "workspace:*",
+    "@tnwx/kits": "workspace:*"
   },
   "gitHead": "0f631ba19491b13de9828ab1ba5f98eca08d550b"
 }

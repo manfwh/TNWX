@@ -1,5 +1,5 @@
 import * as util from 'util'
-import * as urlencode from 'urlencode'
+import {encode} from 'urlencode'
 import { HttpKit } from '@tnwx/kits'
 import { AccessToken, QyAccessTokenApi, OpenCpAccessTokenApi, AccessTokenType } from '@tnwx/accesstoken'
 /**
@@ -19,7 +19,7 @@ export class OpenCpOauthApi {
    * @param state 重定向后会带上state参数，企业可以填写a-zA-Z0-9的参数值，长度不可超过128个字节
    */
   public static getAuthorizeUrl(suiteId: string, redirectUri: string, scope: string, state?: string) {
-    return util.format(this.authorizeUrl, suiteId, urlencode.encode(redirectUri), scope, state)
+    return util.format(this.authorizeUrl, suiteId, encode(redirectUri), scope, state)
   }
 
   /**
@@ -30,7 +30,7 @@ export class OpenCpOauthApi {
    * @param userType 支持登录的类型。admin代表管理员登录（使用微信扫码）,member代表成员登录（使用企业微信扫码），默认为admin
    */
   public static getQrConnect(corpId: string, redirectUri: string, state?: string, userType?: string) {
-    return util.format(this.qrConnectUrl, corpId, urlencode.encode(redirectUri), state, userType)
+    return util.format(this.qrConnectUrl, corpId, encode(redirectUri), state, userType)
   }
 
   private static getUserInfoUrl: string = 'https://qyapi.weixin.qq.com/cgi-bin/service/getuserinfo3rd?suite_access_token=%s&code=%s'

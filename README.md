@@ -1,3 +1,12 @@
+# fork [tnwx](https://github.com/Javen205/TNWX)
+添加了如下功能
+## TODO:
+- [x] 支持小程序[媒体审核接口 V2](https://developers.weixin.qq.com/miniprogram/dev/OpenApiDoc/sec-center/sec-check/mediaCheckAsync.html)
+- [ ] 媒体检测异步[消息回调](https://developers.weixin.qq.com/miniprogram/dev/OpenApiDoc/sec-center/sec-check/mediaCheckAsync.html#%E5%BC%82%E6%AD%A5%E6%A3%80%E6%B5%8B%E7%BB%93%E6%9E%9C%E6%8E%A8%E9%80%81)类型适配
+- [ ] xml解析丢失 traci_id 问题
+
+
+
 <p align="center">
   <a href="https://www.npmjs.com/package/tnwx" target="blank"><img src="https://gitee.com/javen205/TNWX/raw/master/assets/img/logo.png" width="410" alt="TNWX Logo" /></a>
 </p>
