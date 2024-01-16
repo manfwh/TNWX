@@ -3,7 +3,7 @@
 ## TODO:
 - [x] 支持小程序[媒体审核接口 V2](https://developers.weixin.qq.com/miniprogram/dev/OpenApiDoc/sec-center/sec-check/mediaCheckAsync.html)
 - [ ] 媒体检测异步[消息回调](https://developers.weixin.qq.com/miniprogram/dev/OpenApiDoc/sec-center/sec-check/mediaCheckAsync.html#%E5%BC%82%E6%AD%A5%E6%A3%80%E6%B5%8B%E7%BB%93%E6%9E%9C%E6%8E%A8%E9%80%81)类型适配
-- [ ] xml解析丢失 traci_id 问题
+- [x] xml解析丢失 trace_id 问题
 
 
 

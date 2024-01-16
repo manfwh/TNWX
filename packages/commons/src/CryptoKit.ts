@@ -142,10 +142,10 @@ export class CryptoKit {
     if (!xml || typeof xml != 'string') return {}
     let re: any = {}
     xml = xml.replace(/^<xml>|<\/xml>$/g, '')
-    let ms = xml.match(/<([a-z0-9]+)>([\s\S]*?)<\/\1>/gi)
+    let ms = xml.match(/<([a-z0-9_]+)>([\s\S]*?)<\/\1>/gi)
     if (ms && ms.length > 0) {
       ms.forEach(t => {
-        let ms = t.match(/<([a-z0-9]+)>([\s\S]*?)<\/\1>/i) || []
+        let ms = t.match(/<([a-z0-9_]+)>([\s\S]*?)<\/\1>/i) || []
         let tagName = ms[1]
         let cdata = ms[2] || ''
         cdata = cdata.replace(/^\s*<\!\[CDATA\[\s*|\s*\]\]>\s*$/g, '')
