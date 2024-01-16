@@ -54,14 +54,17 @@ export class MiniProgramApi {
    * @param mediaUrl
    * @param mediaType
    */
-  public static async mediaCheckAsync(mediaUrl: string, mediaType: MiniProgramMediaType) {
+  public static async mediaCheckAsync(mediaUrl: string, mediaType: MiniProgramMediaType, scene: MiniProgramMediaCheckScene, openid: string, version?: MiniProgramMediaCheckVersion) {
     let accessToken = await AccessTokenApi.getAccessToken()
     let url = util.format(this.mediaCheckAsyncUrl, (<AccessToken>accessToken).getAccessToken)
     return HttpKit.getHttpDelegate.httpPost(
       url,
       JSON.stringify({
         media_url: mediaUrl,
-        media_type: mediaType
+        media_type: mediaType,
+        ...(version && { version }),
+        ...(scene && { scene }),
+        ...(openid && { openid }),
       })
     )
   }
@@ -434,4 +437,17 @@ export class MiniProgramApi {
 export enum MiniProgramMediaType {
   VOICE = 1,
   IMG = 2
+}
+
+export enum MiniProgramMediaCheckVersion {
+  V1 = 1,
+  V2 = 2
+}
+
+// 1资料、2评论、3论坛、4社交日志
+export enum MiniProgramMediaCheckScene {
+  INFO = 1,
+  COMMENT = 2,
+  FORUM = 3,
+  SOCIAL_LOG = 4
 }
