@@ -54,7 +54,7 @@ export class MiniProgramApi {
    * @param mediaUrl
    * @param mediaType
    */
-  public static async mediaCheckAsync(mediaUrl: string, mediaType: MiniProgramMediaType, scene: MiniProgramMediaCheckScene, openid: string, version?: MiniProgramMediaCheckVersion) {
+  public static async mediaCheckAsync(mediaUrl: string, mediaType: MiniProgramMediaType, scene?: MiniProgramMediaCheckScene, openid?: string, version?: MiniProgramMediaCheckVersion) {
     let accessToken = await AccessTokenApi.getAccessToken()
     let url = util.format(this.mediaCheckAsyncUrl, (<AccessToken>accessToken).getAccessToken)
     return HttpKit.getHttpDelegate.httpPost(
